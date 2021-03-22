@@ -2,6 +2,8 @@ package app;
 
 import exercise1.business.composition.FilePersonReader;
 import exercise1.business.composition.PersonReportGenerator;
+import exercise2.LogicalSwitch;
+import exercise2.Person;
 import exercise3.business.GymReportGenerator;
 import exercise3.domain.Gym;
 import exercise3.domain.GymMember;
@@ -41,5 +43,15 @@ public class App {
 
         GymReportGenerator reportGenerator = new GymReportGenerator(outputFile, gym);
         reportGenerator.generateReport();
+
+        System.out.println();
+
+        Person person = new exercise2.Person("Ana", 22, "Oradea");
+        Person person2 = new exercise2.Person("Ioane", 14, "Deva");
+        LogicalSwitch logicalSwitch = new LogicalSwitch();
+
+
+        System.out.println(logicalSwitch.dispatch(person));
+        System.out.println(logicalSwitch.dispatch(person2));
     }
 }
